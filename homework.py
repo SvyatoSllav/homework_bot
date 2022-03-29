@@ -110,7 +110,7 @@ def parse_status(homework: HOMEWORK_LIST_TYPE) -> str:
     homework_name = homework.get('homework_name', 'Homework_no_name')
     if homework.get('status') not in HOMEWORK_STATUSES:
         logging.error('недокументированный статус домашней работы ,'
-                      'обнаруженный в ответе API')  
+                      'обнаруженный в ответе API')
         raise NoStatusInResponse
     homework_status = homework.get('status')
     verdict = HOMEWORK_STATUSES.get(homework_status)
