@@ -5,8 +5,6 @@ cachetools==4.2.2
 certifi==2021.10.8
 charset-normalizer==2.0.12
 flake8==3.9.2
-flake8-docstrings==1.6.0
-flake8-import-order==0.18.1
 idna==3.3
 importlib-metadata==4.11.3
 iniconfig==1.1.1
@@ -14,7 +12,7 @@ mccabe==0.6.1
 packaging==21.3
 pluggy==1.0.0
 py==1.11.0
-pycodestyle==2.8.0
+pycodestyle==2.7.0
 pydocstyle==6.1.1
 pyflakes==2.3.1
 pyparsing==3.0.7
