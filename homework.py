@@ -63,7 +63,6 @@ def send_message(bot: telegram.Bot, message: str) -> None:
             text=message)
         logging.info(f'Сообщение {message} было отправлено')
     except Exception as error:
-        print('1')
         logging.error(f'Ошибка при отправке {message} сообщения: {error}')
 
 
