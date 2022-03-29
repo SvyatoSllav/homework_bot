@@ -142,6 +142,7 @@ def main() -> None:
     if not check_tokens():
         raise token_existing_exception_raising()
     bot = telegram.Bot(token=TELEGRAM_TOKEN)
+    send_message(bot, 'Бот стартовал')
     current_timestamp = int(time.time())
     while True:
         try:
