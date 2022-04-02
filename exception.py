@@ -1,16 +1,8 @@
 """Исключения при проверке валидности переменных."""
 
 
-class InvalidPracticumToken(Exception):
-    """Возникает из-за некорректности токена Яндекс Практикума."""
-
-
-class InvalidTelegramToken(Exception):
-    """Возникает из-за некорректности телеграмм токена."""
-
-
-class InvalidChatId(Exception):
-    """Возникает из-за некорректности id чата."""
+class VariableNotExists(Exception):
+    """Возникает при отсутствии обязательной переменной."""
 
 
 class HTTPStatusCodeIncorrect(Exception):
