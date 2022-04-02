@@ -15,9 +15,7 @@ from exception import (
     EndPointIsNotAccesed,
     HTTPStatusCodeIncorrect,
     HomeworkValueIncorrect,
-    InvalidChatId,
-    InvalidPracticumToken,
-    InvalidTelegramToken,
+    VariableNotExists,
     InvalidJSONTransform,
     NoStatusInResponse,
 )
@@ -144,18 +142,9 @@ def check_tokens() -> bool:
 def main() -> None:
     """Основная логика работы бота."""
     if not check_tokens():
-        if not PRACTICUM_TOKEN:
-            message = 'Отсутствует PRACTICUM_TOKEN'
-            logger.critical(message)
-            raise InvalidPracticumToken(message)
-        if not TELEGRAM_TOKEN:
-            message = 'Отсутствует TELEGRAM_TOKEN'
-            logger.critical(message)
-            raise InvalidTelegramToken(message)
-        if not TELEGRAM_CHAT_ID:
-            message = 'Отсутствует TELEGRAM_CHAT_ID'
-            logger.critical(message)
-            raise InvalidChatId(message)
+        message = 'Отсутствует критически важная для работы переменная'
+        logger.critical(message)
+        raise VariableNotExists(message)
     bot = telegram.Bot(token=TELEGRAM_TOKEN)
     send_message(bot, 'Бот стартовал')
     current_timestamp = int(time.time())
