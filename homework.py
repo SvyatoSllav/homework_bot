@@ -150,7 +150,6 @@ def main() -> None:
     current_timestamp = int(time.time())
     LAST_ERROR = ''
     while True:
-        send_message(bot, 'Старт произошел')
         try:
             response = get_api_answer(current_timestamp)
             current_timestamp = response.get('current_date')
@@ -168,10 +167,6 @@ def main() -> None:
                 send_message(bot, message)
         finally:
             time.sleep(RETRY_TIME)
-    # Следующее сообщение не должно работать, но сервис Heroku периодически вырубает бота, так что это попытка на проверку работы
-    # Не хочу пересылания сообщения о статусе работы бота раз в 10 минут, чтобы не засорять чат
-    send_message(bot, 'Бот перестал работать')
-
 
 if __name__ == '__main__':
     main()
